@@ -1,12 +1,8 @@
 <?php
 
-class phpunit_FunctionTest extends phpunit_bootstrap{
-	/**
-	 * Test
-	 */
-	public function testFunction() {
-		echo "\nBegin Tests";
+class phpunit_FunctionTest extends phpunit_bootstrap {
 
+	public function testFunction() {
 		$less_file = $this->fixtures_dir.'/functions/less/f1.less';
 		$expected_css = file_get_contents( $this->fixtures_dir.'/functions/css/f1.css' );
 
@@ -21,7 +17,7 @@ class phpunit_FunctionTest extends phpunit_bootstrap{
 	}
 
 	public static function reverse( $arg ) {
-		if( is_a( $arg, 'Less_Tree_Quoted' ) ) {
+		if ( is_a( $arg, 'Less_Tree_Quoted' ) ) {
 			$arg->value = strrev( $arg->value );
 			return $arg;
 		}
